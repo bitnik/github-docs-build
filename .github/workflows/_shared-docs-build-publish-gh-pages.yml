@@ -58,6 +58,9 @@ jobs:
       id-token: write
     outputs:
       url: ${{ steps.vars.outputs.url }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Process variables
         id: vars
